@@ -27,6 +27,8 @@ Multiple fields
       <input type="checkbox" class="input-mask" data-toggle='["inputGroup1", "inputGroup2"]'>Toggle Password
     </label>
 
+    $('.input-mask').passwordToggle();
+
 
 ## Options
 
