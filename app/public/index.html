@@ -8,7 +8,7 @@
 <body>
   <input type="password" placeholder="Password" id="inputPassword">
   <label class="checkbox inline">
-    <input type="checkbox" class="input-mask" data-toggle="inputPassword">Toggle Mask
+    <input type="checkbox" class="input-mask" data-toggle="inputPassword">Toggle Password
   </label>
   
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -18,7 +18,7 @@
   <script>
     $(function(){
       
-      $('.input-mask').mask();
+      $('.input-mask').passwordToggle();
       
     });
   </script>

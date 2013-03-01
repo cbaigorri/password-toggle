@@ -6,13 +6,13 @@ $ = jQuery
 
 # class definition
 
-Mask = (element, options) ->
+PasswordToggle = (element, options) ->
   @$element = $(element)
-  @options = $.extend({}, $.fn.mask.defaults, options)
+  @options = $.extend({}, $.fn.passwordToggle.defaults, options)
   @$element.attr('checked', false)
   return
 
-Mask::toggle = () ->
+PasswordToggle::toggle = () ->
   $el = this.$element
   data = $el.data()
   $field = $('#' + data.toggle)
@@ -22,22 +22,22 @@ Mask::toggle = () ->
 
 # plugin definition
 
-$.fn.mask = (option) ->
+$.fn.passwordToggle = (option) ->
   @each ->
     $this = $(this)
-    data = $this.data('mask')
+    data = $this.data('passwordToggle')
     options = typeof option == 'object' && option
-    if  not data then $this.data 'mask', (data = new Mask(this, options))
+    if  not data then $this.data 'passwordToggle', (data = new PasswordToggle(this, options))
     if option is 'toggle' then data.toggle()
     return
 
-$.fn.mask.defaults = {}
+$.fn.passwordToggle.defaults = {}
 
-$.fn.mask.Constructor = Mask
+$.fn.passwordToggle.Constructor = PasswordToggle
 
 # data api
 
-$(document).on 'click.mask.data-api', '[data-toggle]', (e) ->
+$(document).on 'click.passwordToggle.data-api', '[data-toggle]', (e) ->
   $checkbox = $(e.target)
-  $checkbox.mask('toggle')
+  $checkbox.passwordToggle('toggle')
   return
