@@ -13,6 +13,10 @@ exerr = (err, sout, serr) ->
   process.stdout.write serr if serr
   return
 
+task 'watch', 'watch and compile changes in source dir', ->
+  watch = exec "coffee -j app/public/js/jquery.passwordtoggle.js -cw app/src/PasswordToggle.coffee"
+  watch.stdout.on 'data', (data)-> process.stdout.write data
+
 task 'build', 'Build single application file from source files', ->
   appContents = new Array remaining = appFiles.length
   for file, index in appFiles then do (file, index) ->
