@@ -9,6 +9,11 @@ Include script *after* the jQuery library:
     <script src="/path/to/jquery.passwordtoggle.js"></script>
 
 ## Usage
+    
+    <input type="password" placeholder="Password" id="inputPassword">
+    <label class="checkbox inline">
+      <input type="checkbox" class="input-mask" data-toggle="inputPassword">Toggle Password
+    </label>
 
     $('.input-mask').passwordToggle();
 
