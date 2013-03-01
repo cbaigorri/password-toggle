@@ -10,7 +10,7 @@ Include script *after* the jQuery library:
 
 ## Usage
 
-    $('.input-mask').mask();
+    $('.input-mask').passwordToggle();
 
 ## Options
 
