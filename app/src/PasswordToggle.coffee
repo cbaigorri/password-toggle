@@ -15,7 +15,13 @@ PasswordToggle = (element, options) ->
 PasswordToggle::toggle = () ->
   $el = this.$element
   data = $el.data()
-  $field = $('#' + data.toggle)
+  if typeof data.toggle is 'object'
+    fieldStr = []
+    for selector, i in data.toggle
+      fieldStr.push '#' + selector
+    $field = $(fieldStr.join(', '))
+  else 
+    $field = $('#' + data.toggle)
   $field.attr('type', (if ($field.attr('type') is 'text') then 'password' else 'text'))
   return
 
@@ -38,6 +44,7 @@ $.fn.passwordToggle.Constructor = PasswordToggle
 # data api
 
 $(document).on 'click.passwordToggle.data-api', '[data-toggle]', (e) ->
+  console.log e
   $checkbox = $(e.target)
   $checkbox.passwordToggle('toggle')
   return

@@ -17,10 +17,20 @@ Author: Chris Baigorri - @cbaigorri
   };
 
   PasswordToggle.prototype.toggle = function() {
-    var $el, $field, data;
+    var $el, $field, data, fieldStr, i, selector, _i, _len, _ref;
     $el = this.$element;
     data = $el.data();
-    $field = $('#' + data.toggle);
+    if (typeof data.toggle === 'object') {
+      fieldStr = [];
+      _ref = data.toggle;
+      for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
+        selector = _ref[i];
+        fieldStr.push('#' + selector);
+      }
+      $field = $(fieldStr.join(', '));
+    } else {
+      $field = $('#' + data.toggle);
+    }
     $field.attr('type', ($field.attr('type') === 'text' ? 'password' : 'text'));
   };
 
@@ -45,6 +55,7 @@ Author: Chris Baigorri - @cbaigorri
 
   $(document).on('click.passwordToggle.data-api', '[data-toggle]', function(e) {
     var $checkbox;
+    console.log(e);
     $checkbox = $(e.target);
     $checkbox.passwordToggle('toggle');
   });
