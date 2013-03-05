@@ -4,16 +4,5 @@
   , "launch_in_dev": [
     "phantomjs"
   ]
-  , "before_tests": "coffee -j app/public/js/jquery.passwordtoggle.js -cw app/src/PasswordToggle.coffee"
-  , "src_files": [
-    "app/src/*.coffee"
-  ]
-  , "serve_files": [
-    "app/public/js/lib/jquery.min.js"
-    , "app/public/js/lib/chai.js"
-    , "app/public/js/lib/sinon-chai.js"
-    , "app/public/js/lib/sinon-1.6.0.js"
-    , "app/public/js/jquery.passwordtoggle.js"
-    , "app/public/js/test/*.js"
-  ]
+  , "before_tests": "coffee -j app/public/js/jquery.passwordtoggle.js -c app/src/PasswordToggle.coffee"
 }
