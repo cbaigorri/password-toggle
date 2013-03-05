@@ -55,7 +55,6 @@ Author: Chris Baigorri - @cbaigorri
 
   $(document).on('click.passwordToggle.data-api', '[data-toggle]', function(e) {
     var $checkbox;
-    console.log(e);
     $checkbox = $(e.target);
     $checkbox.passwordToggle('toggle');
   });

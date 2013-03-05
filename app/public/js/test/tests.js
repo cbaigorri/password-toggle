@@ -1,5 +1,6 @@
-var should = chai.should(),
-  expect = chai.expect;
+var should = chai.should();
+var expect = chai.expect;
+
 
 describe('password toggle plugin on one field', function () {
 

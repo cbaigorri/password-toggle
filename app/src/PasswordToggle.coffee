@@ -44,7 +44,6 @@ $.fn.passwordToggle.Constructor = PasswordToggle
 # data api
 
 $(document).on 'click.passwordToggle.data-api', '[data-toggle]', (e) ->
-  console.log e
   $checkbox = $(e.target)
   $checkbox.passwordToggle('toggle')
   return

@@ -1,5 +1,9 @@
 {
   "framework": "mocha"
+  , "test_page": "app/public/js/test/runner.html"
+  , "launch_in_dev": [
+    "phantomjs"
+  ]
   , "before_tests": "coffee -j app/public/js/jquery.passwordtoggle.js -cw app/src/PasswordToggle.coffee"
   , "src_files": [
     "app/src/*.coffee"

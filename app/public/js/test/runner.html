@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tests</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="/testem/mocha.css">
+  <script src="/testem/mocha.js"></script>
+  <script src="/testem.js"></script>
+  <script>mocha.setup('bdd')</script>
+  <script src="/app/public/js/lib/jquery.min.js"></script>
+  <script src="/app/public/js/lib/chai.js"></script>
+  <script src="/app/public/js/lib/sinon-chai.js"></script>
+  <script src="/app/public/js/lib/sinon-1.6.0.js"></script>
+  <script src="/app/public/js/jquery.passwordtoggle.js"></script>
+  <script src="/app/public/js/test/tests.js"></script>
+</head>
+<body>
+  <div id="mocha"></div>
+  <script>
+  if (window.mochaPhantomJS) { 
+    mochaPhantomJS.run(); 
+  } 
+  else { 
+    mocha
+      .globals([ 'script*' ])
+      .run();
+  }
+  </script>
+</body>
+</html>
