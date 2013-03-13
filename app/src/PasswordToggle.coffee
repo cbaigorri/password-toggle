@@ -8,8 +8,8 @@ $ = jQuery
 
 PasswordToggle = (element, options) ->
   @$element = $(element)
-  @options = $.extend({}, $.fn.passwordToggle.defaults, options)
-  @$element.attr('checked', false)
+  @options = $.extend {}, $.fn.passwordToggle.defaults, options
+  @$element.attr 'checked', false
   return
 
 PasswordToggle::toggle = () ->
